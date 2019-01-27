@@ -20,6 +20,10 @@
     <my-button :disabled="disabled" @click="submit">
       <div slot="content">-></div>
     </my-button>
+
+    <!-- Test -->
+    <a href="/pages/nolock/main">无锁</a>
+    <a href="/pages/haslock/main">有锁</a>
   </div>
 </template>
 
@@ -64,8 +68,9 @@ export default {
       }, 1000)
     },
     submit () {
-      const url = '../home/main'
-      wx.navigateTo({ url })
+      // const url = '../home/main'
+      // wx.navigateTo({ url })
+      console.log('submit')
     }
   }
 }

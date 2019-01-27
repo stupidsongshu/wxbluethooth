@@ -4,9 +4,23 @@
     "pages/logs/main",
     "pages/counter/main",
     "pages/login/main",
-    "pages/home/main",
+    "pages/nolock/main",
+    "pages/haslock/main",
+    "pages/addLockList/main",
     "pages/locklist/main"
   ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/main",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/logs/main",
+        "text": "日志"
+      }
+    ]
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

@@ -32,9 +32,14 @@
         <my-button :loading="loading" @click="addLock">
           <div slot="content">
             <!-- TODO loading -->
+            loading
           </div>
         </my-button>
       </div>
+
+      <!-- Test -->
+      <a href="/pages/addLockList/main?access=0">无可添加锁</a>
+      <a href="/pages/addLockList/main?access=1">有可添加锁</a>
     </div>
   </div>
 </template>

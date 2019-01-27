@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App'
 
+import './assets/style/base.css'
 import './components/button'
 
 Vue.config.productionTip = false
