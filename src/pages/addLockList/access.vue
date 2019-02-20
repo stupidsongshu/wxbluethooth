@@ -1,7 +1,19 @@
 <template>
   <div class="has-lock page-content">
     <ul>
-      <li class="lock-item">
+      <li class="lock-item" v-for="(item, index) in accessList" :key="index" @click="setNickname(item)">
+        <div class="lock-item-l">
+          <span class="lock-icon">
+            <img v-if="item.access" src="./img/icon-access@2x.png" alt="">
+            <img v-else src="./img/icon-not-access@2x.png" alt="">
+          </span>
+          <span class="lock-name">{{item.name}}</span>
+        </div>
+        <div class="lock-add" v-if="item.access">
+          <img src="./img/icon-add@2x.png" alt="">
+        </div>
+      </li>
+      <!-- <li class="lock-item">
         <div class="lock-item-l">
           <span class="lock-icon">
             <img v-if="access" src="./img/icon-access@2x.png" alt="">
@@ -12,19 +24,7 @@
         <div class="lock-add" v-if="access">
           <img src="./img/icon-add@2x.png" alt="">
         </div>
-      </li>
-      <li class="lock-item">
-        <div class="lock-item-l">
-          <span class="lock-icon">
-            <img v-if="access" src="./img/icon-access@2x.png" alt="">
-            <img v-else src="./img/icon-not-access@2x.png" alt="">
-          </span>
-          <span class="lock-name">M088686</span>
-        </div>
-        <div class="lock-add" v-if="access">
-          <img src="./img/icon-add@2x.png" alt="">
-        </div>
-      </li>
+      </li> -->
     </ul>
   </div>
 </template>
@@ -33,7 +33,37 @@
 export default {
   data () {
     return {
-      access: true
+      accessList: [
+        {
+          name: 'M088686',
+          access: true
+        },
+        {
+          name: 'M088687',
+          access: false
+        }
+      ]
+    }
+  },
+  mounted () {
+    wx.showModal({
+      title: '无法添加',
+      showCancel: false,
+      content: '锁已被添加，请联系管理员删除后再添加',
+      confirmColor: '#31A9FF',
+      success (res) {
+        if (res.confirm) {
+          console.log('confirm')
+        }
+      }
+    })
+  },
+  methods: {
+    setNickname (item) {
+      if (item.access) {
+        const url = '/pages/setNickname/main'
+        wx.navigateTo({ url })
+      }
     }
   }
 }

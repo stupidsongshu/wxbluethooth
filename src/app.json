@@ -7,20 +7,9 @@
     "pages/nolock/main",
     "pages/haslock/main",
     "pages/addLockList/main",
-    "pages/locklist/main"
+    "pages/locklist/main",
+    "pages/setNickname/main"
   ],
-  "tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/index/main",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/logs/main",
-        "text": "日志"
-      }
-    ]
-  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
